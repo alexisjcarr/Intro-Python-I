@@ -11,9 +11,10 @@ def f1(int1, int2):
 
 print(f1(1, 2))
 
-# Write a function f2 that takes any number of integer arguments and returns the
-# sum.
+# Write a function f2 that takes any number of integer arguments and returns
+# the sum.
 # Note: Google for "python arbitrary arguments" and look for "*args"
+
 
 # YOUR CODE HERE
 def f2(*args):
@@ -31,7 +32,8 @@ a = [7, 6, 5, 4]
 print(f2(*a))    # Should print 22
 
 
-# Write a function f3 that accepts either one or two arguments. If one argument,
+# Write a function f3 that accepts either one or two arguments. If one
+# argument,
 # it returns that value plus 1. If two arguments, it returns the sum of the
 # arguments.
 # Note: Google "python default arguments" for a hint.

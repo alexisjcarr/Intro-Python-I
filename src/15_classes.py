@@ -7,8 +7,9 @@ class LatLon(object):
         self.lat = lat
         self.lon = lon
 
-# Make a class Waypoint that can be passed parameters `name`, `lat`, and `lon` to the
-# constructor. It should inherit from LatLon. Look up the `super` method.
+# Make a class Waypoint that can be passed parameters `name`, `lat`, and `lon` 
+# to the constructor. It should inherit from LatLon. Look up the `super` 
+# method.
 
 # YOUR CODE HERE
 
