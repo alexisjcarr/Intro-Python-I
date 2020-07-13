@@ -18,15 +18,38 @@ and does the following:
    the format that your program expects arguments to be given.
    Then exit the program.
 
-Note: the user should provide argument input (in the initial call to run the file) and not 
-prompted input. Also, the brackets around year are to denote that the argument is
-optional, as this is a common convention in documentation.
+Note: the user should provide argument input (in the initial call to run the
+file) and not prompted input. Also, the brackets around year are to denote
+that the argument is optional, as this is a common convention in documentation.
 
-This would mean that from the command line you would call `python3 14_cal.py 4 2015` to 
-print out a calendar for April in 2015, but if you omit either the year or both values, 
-it should use today’s date to get the month and year.
+This would mean that from the command line you would call
+`python3 14_cal.py 4 2015` to print out a calendar for April in 2015, but if
+you omit either the year or both values, it should use today’s date to get the
+month and year.
 """
 
 import sys
 import calendar
 from datetime import datetime
+
+
+def main(args):
+    try:
+        _, month, year = args
+        return calendar.month(int(year), int(month))
+    except ValueError:
+        num_args = len(args) - 1
+        if num_args == 0:
+            month = datetime.now().month
+            year = datetime.now().year
+            return calendar.month(year, month)
+        elif num_args == 1:
+            year = datetime.now().year
+            month = args[1]
+            return calendar.month(year, int(month))
+        else:
+            return "Format of program needs to be 14_cal.py [month] [year]"
+
+
+if __name__ == "__main__":
+    print(main(sys.argv))
